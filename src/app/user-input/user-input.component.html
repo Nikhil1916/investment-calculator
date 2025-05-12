@@ -1,0 +1,12 @@
+<div *ngIf="type == 'text'" class="m-2 p-2 flex flex-col justify-center box-border">
+    <label class="text-gray-200 font-bold text-sm" for="{{name}}">{{convert(name)}}</label>
+    <input class="p-1.5 border border-gray-200 rounded" type="{{type}}" [(ngModel)]="value" name="{{name}}" (change)="updateValue()"/>
+</div>
+
+
+<div *ngIf="type == 'number'" class="m-2 p-2 flex flex-col justify-center box-border">
+    <label class="text-gray-200 font-bold text-sm" for="{{name}}">{{convert(name)}}</label>
+    <input (keydown)="blockMinus($event)" min="0" class="p-1.5 border border-gray-200 rounded" type="number" [(ngModel)]="value" name="{{name}}" (change)="updateValue()"/>
+</div>
+
+
