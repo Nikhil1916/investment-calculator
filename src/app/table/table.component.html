@@ -1,0 +1,14 @@
+<table>
+    <thead>
+        <th *ngFor="let col of cols">
+            {{col.name}}
+        </th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of rows">
+            <td *ngFor="let col of cols">
+                {{row[col.slug]}}
+            </td>
+        </tr>
+    </tbody>
+</table>
