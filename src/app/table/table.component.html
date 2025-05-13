@@ -1,14 +1,24 @@
-<table>
+<div *ngIf="rows.length>0" class="flex justify-center items-center mt-4">
+  <table class="text-white  bord shadow-lg">
     <thead>
-        <th *ngFor="let col of cols">
-            {{col.name}}
+      <tr>
+        <th
+          *ngFor="let col of cols"
+          class=" px-4 py-2 bg-gray-800 text-sm font-semibold"
+        >
+          {{ col.name }}
         </th>
+      </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let row of rows">
-            <td *ngFor="let col of cols">
-                {{row[col.slug]}}
-            </td>
-        </tr>
+      <tr *ngFor="let row of rows" class="hover:bg-gray-700 transition-colors">
+        <td
+          *ngFor="let col of cols"
+          class=" px-4 py-2 text-center"
+        >
+          {{ row[col.slug] }}
+        </td>
+      </tr>
     </tbody>
-</table>
+  </table>
+</div>

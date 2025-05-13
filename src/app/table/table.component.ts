@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ColDefination, RowDefination } from './table.model';
 
 @Component({
   selector: 'app-table',
@@ -8,12 +9,11 @@ import { Component, Input } from '@angular/core';
   templateUrl: './table.component.html',
   styleUrl: './table.component.css'
 })
-export class TableComponent {
-  @Input()cols:Array<{
-    name:string,
-    slug:string
-  }> = [];
-  @Input() rows:Array<{
-    [key:string]:any
-  }> = [];
+export class TableComponent implements OnChanges {
+  @Input() cols:Array<ColDefination> = [];
+  @Input() rows:Array<RowDefination> = [];
+
+  ngOnChanges(changes: SimpleChanges): void {
+      console.log(changes);
+  }
 }

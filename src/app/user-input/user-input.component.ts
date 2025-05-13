@@ -16,7 +16,7 @@ export class UserInputComponent {
   @Output() selectedValue = new EventEmitter<any>();
 
   updateValue() {
-    console.log(typeof this.value);
+    // console.log(typeof this.value);
     this.selectedValue.emit({
       value: this.value,
       key: this.name

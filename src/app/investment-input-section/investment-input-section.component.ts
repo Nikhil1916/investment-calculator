@@ -19,7 +19,10 @@ export class InvestmentInputSectionComponent {
   }
 
   onCalculate() {
-    const data = this.calculateService.calculateInvestmentResults({...this.value});
-    this.eventEmitterService.emit(new EmitEvent(Events.InvestmentResult, data));
+    if(Object.keys(this.value).length==4) {
+      const data = this.calculateService.calculateInvestmentResults({...this.value});
+      // console.log(data);
+      this.eventEmitterService.emit(new EmitEvent(Events.InvestmentResult, data));
+    }
   }
 }

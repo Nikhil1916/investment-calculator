@@ -25,7 +25,7 @@ export class CalculateService {
       annual_investment: annual_investment,
       totalInterest: totalInterest,
       totalAmountInvested: initial_investment + annual_investment * year,
-    });
+    }); 
   }
 
   return annualData;
